@@ -17,9 +17,10 @@
 
 #define PWM_NONINVERTED (1<<COM1A1)
 #define PWM_FAST_10	(1<<WGM12) | (1<<WGM11) | (1<<WGM10)
-#define PWM_NO_PRESCALE	(1<<CS10)
 #define PWM_BOTTOM	0
 #define PWM_TOP		1023
+
+#define TIMER_NO_PRESCALE	(1<<CS10)
 
 volatile uint16_t pwmval = 0;
 
@@ -34,7 +35,7 @@ int main(void)
 
 	/* set timer / pwm */
 	TCCR1A |= PWM_NONINVERTED | PWM_FAST_10;
-	TCCR1B |= PWM_NO_PRESCALE;
+	TCCR1B |= TIMER_NO_PRESCALE;
 
 	OCR1A = pwmval;
 
