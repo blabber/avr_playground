@@ -43,7 +43,7 @@ DUDEMCU = t2313
 
 # Main Oscillator Frequency
 # This is only used to define F_OSC in all assembler and c-sources.
-F_OSC = 3686400
+F_OSC = 8000000
 
 # Output format. (can be srec, ihex, binary)
 FORMAT = ihex
