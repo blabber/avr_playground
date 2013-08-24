@@ -1,3 +1,8 @@
+/**
+ * Simple fast pwm, controlled by buttons.
+ * Written for ATtiny2313A
+ */
+
 #define F_CPU 8000000UL
 
 #include <avr/io.h>
