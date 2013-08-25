@@ -1,8 +1,12 @@
+/**
+ * Simple timer interrupt example.
+ * Written for ATtiny2313A
+ */
+
 #define F_CPU 1000000UL
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <stdint.h>
 
 #define LED1	(1<<PD5)
 #define LED2	(1<<PD6)
