@@ -185,10 +185,9 @@ AVRDUDE_PORT = usb    # programmer connected to serial device
 
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 #AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
-# XXX AVRDUDE_WRITE_FUSES = -U lfuse:w:0x64:m
-#  AVRDUDE_WRITE_FUSES = -U lfuse:w:0x7f:m
-#  AVRDUDE_WRITE_FUSES += -U hfuse:w:0xdf:m
-#  AVRDUDE_WRITE_FUSES += -U efuse:w:0xff:m
+AVRDUDE_WRITE_FUSES = -U lfuse:w:0x7f:m
+AVRDUDE_WRITE_FUSES += -U hfuse:w:0xdf:m
+AVRDUDE_WRITE_FUSES += -U efuse:w:0xff:m
 
 
 # Uncomment the following if you want avrdude's erase cycle counter.
