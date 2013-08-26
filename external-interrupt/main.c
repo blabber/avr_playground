@@ -13,8 +13,6 @@
 #define BUTTON	(1<<PD2)
 #define LED	(1<<PD5)
 
-#define TIMER_PRESCALE_8 (1<<CS11)
-
 #define INT0_FALLING_EDGE	(1<<ISC11)
 
 volatile uint8_t flag;
@@ -32,8 +30,7 @@ int main(void)
 	/* enable pullups */
 	PORTD |= BUTTON;
 
-	/* set timer */
-	TCCR1B |= TIMER_PRESCALE_8;
+	/* configure interrupt */
 	MCUCR |= INT0_FALLING_EDGE;
 
 	/* enable interrupts */
