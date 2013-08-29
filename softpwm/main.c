@@ -15,8 +15,8 @@
 
 #define TIMER_NOPRESCALER	(1<<CS10)
 
-#define PWM_STEPS		(128)
-#define PWM_LEN			(1024)
+#define PWM_STEPS		(64)
+#define PWM_LEN			((65535)/PWM_STEPS)
 
 volatile uint8_t pwm1;
 volatile uint8_t pwm2;
@@ -72,7 +72,7 @@ main(void)
 			pwmdir2 = 1;
 		pwm2 += pwmdir2;
 
-		_delay_ms(128);
+		_delay_ms(32);
 	}
 
 	/* NOTREACHED */
