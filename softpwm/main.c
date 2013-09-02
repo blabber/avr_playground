@@ -16,7 +16,7 @@
 #define TIMER_NOPRESCALER	(1<<CS10)
 
 #define PWM_STEPS		(64)
-#define PWM_LEN			((65535)/PWM_STEPS)
+#define PWM_LEN			(65536/PWM_STEPS)
 
 volatile uint8_t pwm1;
 volatile uint8_t pwm2;
@@ -37,7 +37,7 @@ ISR(TIMER1_COMPA_vect)
 
 	OCR1A += PWM_LEN;	
 
-	if (pwmcnt++ == PWM_STEPS)
+	if (++pwmcnt == PWM_STEPS)
 		pwmcnt = 0;
 
 	TIFR = (1<<OCF1A);
@@ -60,13 +60,13 @@ main(void)
 
 	for (;;)
 	{
-		if (pwm1 == PWM_STEPS)
+		if (pwm1 == PWM_STEPS - 1)
 			pwmdir1 = -1;
 		else if (pwm1 == 0)
 			pwmdir1 = 1;
 		pwm1 += pwmdir1;
 
-		if (pwm2 == PWM_STEPS)
+		if (pwm2 == PWM_STEPS - 1)
 			pwmdir2 = -1;
 		else if (pwm2 == 0)
 			pwmdir2 = 1;
