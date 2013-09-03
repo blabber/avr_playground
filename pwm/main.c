@@ -24,7 +24,8 @@
 
 volatile uint16_t pwmval = 0;
 
-int main(void)
+int
+main(void)
 {
 	/* outputs */
 	DDRD |= LED;

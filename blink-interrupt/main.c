@@ -23,7 +23,8 @@ ISR(TIMER1_COMPA_vect)
 	PORTD ^= LED2;
 }
 
-int main(void)
+int
+main(void)
 {
 	/* outputs */
 	DDRD |= LED1 | LED2;

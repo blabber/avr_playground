@@ -22,7 +22,8 @@ ISR(INT0_vect)
 	flag = 1;
 }
 
-int main(void)
+int
+main(void)
 {
 	/* outputs */
 	DDRD |= LED;
