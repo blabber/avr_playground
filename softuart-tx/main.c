@@ -1,6 +1,14 @@
 /**
- * Simple unidirectional (TX) software uart.
+ * Simple unidirectional (TX) software UART.
  * Written for ATtiny2313A.
+ *
+ * This implementation is blocking. As it is just implementing the TX side of
+ * the UART this should be no problem as no polling is required. To push out
+ * measurements or debug messages on a MCU without hardware UART this might be
+ * good enough.
+ *
+ * For bidirectional communication a interrupt based implementation as described
+ * by Atmel Applicaltion Note AVR304 should be preferred.
  */
 
 #define F_CPU 8000000UL
