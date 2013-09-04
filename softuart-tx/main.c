@@ -22,6 +22,7 @@ int
 main(void)
 {
 	DDRB |= TX;
+	PORTB |= TX;
 
 	for (;;) {
 		uart_puts("Das ist ein Test\r\n");
